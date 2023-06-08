@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
 
 
@@ -17,6 +17,12 @@ export class AddCharacterComponent {
     power: 0
   }
 
+  @Input('characterToUpdate')
+  public characterToUpdate: Character= {
+    name: 'Trunks',
+    power: 30
+  }
+
   emitCharacter(){
 
     if(this.character.name.length === 0 ) return;
@@ -25,6 +31,10 @@ export class AddCharacterComponent {
 
     this.character = { name: '', power: 0 };
 
+  }
+
+  clear(){
+    this.characterToUpdate = { name:'', power: 0 }
   }
 
 }

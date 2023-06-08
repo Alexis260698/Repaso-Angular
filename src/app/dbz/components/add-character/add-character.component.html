@@ -5,18 +5,21 @@
        [(ngModel)]="character.name"
        name="name"
        class="form-control mb-2"
-       placeholder="Nombre">
+       placeholder="Nombre"
+       value={{characterToUpdate.name}}>
 
 
       <input type="text"
        [(ngModel)]="character.power"
        name="power"
-        class="form-control mb-2"
-        placeholder="Poder">
+       class="form-control mb-2"
+      placeholder="Poder"
+      value={{characterToUpdate.power}}>
 
-
-      <button class="btn btn-primary" type="submit">Agregar</button>
-
+      <div>
+      <button class="btn btn-primary mx-auto" type="submit" >Agregar</button>
+      <button (click)="clear()" class="btn btn-primary mx-auto" type="submit" >Limpiar</button>
+      </div>
 
     </form>
 
